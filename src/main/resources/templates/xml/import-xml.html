@@ -21,13 +21,13 @@
                     </div>
                     <div class="col-md-12 d-flex justify-content-center">
                         <th:block th:if="${areImported[0] == false}">
-                            <a class="btn bg-black glow-button mx-5 my-5"th:href="@{/import/companies}">Import Companies</a>
+                            <a class="btn bg-black glow-button mx-5 my-5" th:href="@{/import/companies}">Import Companies</a>
                         </th:block>
                         <th:block th:if="${areImported[1] == false}">
-                            <a class="btn bg-black glow-button mx-5 my-5"th:href="@{/import/projects}">Import Projects</a>
+                            <a class="btn bg-black glow-button mx-5 my-5" th:href="@{/import/projects}">Import Projects</a>
                         </th:block>
                         <th:block th:if="${areImported[2] == false}">
-                            <a class="btn bg-black glow-button mx-5 my-5"th:href="@{/import/employees}">Import Employees</a>
+                            <a class="btn bg-black glow-button mx-5 my-5" th:href="@{/import/employees}">Import Employees</a>
                         </th:block>
                         <th:block th:if="${areImported[0] == true && areImported[1] == true && areImported[2] == true}">
                             <p class="display-4">All XML files are imported.</p>
