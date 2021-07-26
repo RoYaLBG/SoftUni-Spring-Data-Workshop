@@ -1,23 +1,14 @@
 package com.example.demoWeb.dto;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+public class ExportedEmployeeDto {
 
-@XmlAccessorType(XmlAccessType.FIELD)
-public class EmployeeDto {
-
-    @XmlElement(name = "first-name")
     private String firstName;
 
-    @XmlElement(name = "last-name")
     private String lastName;
 
-    @XmlElement(name = "age")
     private int age;
 
-    @XmlElement
-    private ProjectDto project;
+    private String projectName;
 
     public String getFirstName() {
         return firstName;
@@ -43,11 +34,18 @@ public class EmployeeDto {
         this.age = age;
     }
 
-    public ProjectDto getProject() {
-        return project;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public void setProject(ProjectDto project) {
-        this.project = project;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.getFirstName() + " " + this.getLastName() + "\n"
+                + "\tAge: " + this.getAge() + "\n"
+                + "\tProject name: " + this.getProjectName();
     }
 }
