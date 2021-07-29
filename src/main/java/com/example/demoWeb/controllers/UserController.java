@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.stream.Collectors;
 
 @Controller
-public class UserController {
+public class UserController extends BaseController{
 
     private final UserService userService;
 
@@ -63,6 +63,18 @@ public class UserController {
                 "userId",
                 userId
         );
+
+        return "redirect:/";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        if (this.isLogged(request)) {
+            request.getSession().setAttribute(
+                    "userId",
+                    null
+            );
+        }
 
         return "redirect:/";
     }
